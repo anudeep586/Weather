@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <style>
+        * {
+            margin:0;
+            font-family: "Bitstream Vera Sans Mono" Monaco,"Courier New", Courier ,monospace;
+            box-sizing: border-box;
+        }
+        #main{
+            text-align: center;
+            padding-top: 50px;
+        }
+        input[type="text"]{
+            width: 30%;
+            padding:10px;
+            border:2px solid black;
+            margin-bottom:5px;
+            margin-top: 10px;
+        }
+        input[type="submit"]{
+            width: 30%;
+            padding:10px;
+            border:2px solid black;
+            background: black;
+            color: white;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        form {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+    <h1>Know your Weather</h1>
+    <form method="get">
+        <label for="city">
+        </label>
+        <input type="text" name="city" id="city" placeholder="city..."/>
+        <input type="submit" value="submit"/>
+    </form>
+    {% if result %}
+        <h3>{{ result.region }}</h3>
+        <h3>{{ result.dayhour }}</h3>
+        <h3>{{ result.temp_now }}</h3>
+        <h3>{{ result.weather_now }}</h3>
+    {% endif %}
+     
+</div>
+</body>
+</html>
